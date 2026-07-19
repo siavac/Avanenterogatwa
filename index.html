@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang='ht'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>SIAVAC Avi Ofisyèl</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'></script>
+<style>
+body{font-family:Arial;background:#eef2f7;margin:0;padding:20px}
+.card{max-width:800px;margin:auto;background:#fff;border:4px solid #0b2d5c;border-radius:14px;padding:24px}
+h1,h2{color:#0b2d5c;text-align:center}.btns{text-align:center;margin:20px}
+button{padding:10px 16px;margin:5px}
+</style></head><body>
+<div id='doc' class='card'>
+<img src='https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg' style='max-width:120px;display:block;margin:auto'>
+<h1>SIAVAC</h1><h2>AVI OFISYÈL ANVAN ENTÈWOGASYON</h2>
+<p>Chè Onorab, SIAVAC ap fè yon ankèt. Ou ka resevwa kesyon atravè WhatsApp.</p>
+<ul><li>Respè diyite ak dwa chak moun.</li><li>Repons yo ede etabli laverite.</li><li>Enfòmasyon trete avèk konfidansyalite.</li><li>Ou ka mande klarifikasyon.</li></ul>
+<p><b>Kontak:</b><br>siavacsecurity@gmail.com<br>3537-9836</p>
+</div>
+<div class='btns'><button onclick='png()'>PNG</button><button onclick='pdf()'>PDF</button></div>
+<script>
+async function png(){let c=await html2canvas(doc);let a=document.createElement('a');a.href=c.toDataURL();a.download='SIAVAC.png';a.click();}
+async function pdf(){const {jsPDF}=window.jspdf;let c=await html2canvas(doc);let i=c.toDataURL();let p=new jsPDF('p','mm','a4');let w=190,h=c.height*w/c.width;p.addImage(i,'PNG',10,10,w,h);p.save('SIAVAC.pdf');}
+</script></body></html>
