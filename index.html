@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ht">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,83 +18,134 @@ box-sizing:border-box;
 body{
 margin:0;
 background:#202020;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 padding:10px;
 }
 
+
+/* FÈY LEGAL 8.5x14 RESPONSIVE */
+
 .page{
+
 width:100%;
-max-width:800px;
-min-height:100vh;
+max-width:816px;
+
+aspect-ratio:8.5 / 14;
+
 background:white;
+
 margin:auto;
-padding:25px 18px;
-border-radius:8px;
+
+padding:35px 30px;
+
 position:relative;
+
+overflow:hidden;
+
 }
 
+
+
+/* LOGO */
 
 .logo{
+
 text-align:center;
-margin-bottom:15px;
+
+margin-bottom:10px;
+
 }
+
 
 .logo img{
-width:150px;
-max-width:80%;
+
+width:130px;
+
+max-width:40%;
+
 height:auto;
+
 }
 
 
+
+/* HEADER */
+
 .header{
+
 text-align:center;
+
 border-bottom:3px solid #111;
-padding-bottom:15px;
+
+padding-bottom:12px;
+
 }
 
 
 .header h1{
+
 margin:5px;
+
 font-size:28px;
-font-weight:bold;
+
 }
 
 
 .header p{
+
 margin:5px;
+
 font-size:14px;
+
 }
 
+
+
+/* ZÒN TÈKS */
 
 .content{
 
 margin-top:20px;
-min-height:500px;
+
+height:70%;
 
 border:1px solid #ccc;
+
 border-radius:5px;
 
 padding:15px;
 
-font-size:16px;
-line-height:1.7;
+font-size:15px;
+
+line-height:1.6;
 
 white-space:pre-wrap;
 
 outline:none;
 
+overflow:hidden;
+
 }
 
 
+
+/* FOOTER */
+
 .footer{
 
-margin-top:40px;
+position:absolute;
+
+bottom:25px;
+
+left:30px;
+
+right:30px;
 
 text-align:center;
 
 border-top:1px solid #aaa;
 
-padding-top:10px;
+padding-top:8px;
 
 font-size:12px;
 
@@ -102,6 +154,8 @@ color:#555;
 }
 
 
+
+/* BOUTON */
 
 button{
 
@@ -123,7 +177,7 @@ border:none;
 
 border-radius:8px;
 
-font-size:17px;
+font-size:16px;
 
 }
 
@@ -131,38 +185,62 @@ font-size:17px;
 
 @media(max-width:500px){
 
+
+body{
+
+padding:5px;
+
+}
+
+
 .page{
 
-padding:20px 12px;
+padding:20px 15px;
 
 }
 
 
 .logo img{
 
-width:120px;
+width:90px;
 
 }
 
 
 .header h1{
 
-font-size:24px;
+font-size:22px;
+
+}
+
+
+.header p{
+
+font-size:12px;
 
 }
 
 
 .content{
 
-font-size:15px;
+font-size:13px;
 
-min-height:450px;
+padding:10px;
+
+}
+
+
+.footer{
+
+font-size:10px;
 
 }
 
 }
 
 
+
+/* ENPRIME */
 
 @media print{
 
@@ -184,15 +262,20 @@ display:none;
 
 .page{
 
-border-radius:0;
-
 max-width:none;
+
+width:8.5in;
+
+height:14in;
+
+aspect-ratio:auto;
 
 }
 
 }
 
 </style>
+
 
 </head>
 
@@ -205,9 +288,9 @@ max-width:none;
 
 <div class="logo">
 
-<img crossorigin="anonymous" 
-src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg" 
-alt="Logo Ofisyèl SIAVAC">
+<img crossorigin="anonymous"
+src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg"
+alt="Logo SIAVAC">
 
 </div>
 
@@ -261,7 +344,7 @@ Sèvis Entèlijans Anti-Vòl ak Anti-Krim
 
 <button onclick="telechajeImaj()">
 
-📷 Telechaje kòm imaj PNG
+📷 Telechaje kòm imaj Legal 8.5x14
 
 </button>
 
@@ -271,25 +354,36 @@ Sèvis Entèlijans Anti-Vòl ak Anti-Krim
 
 function telechajeImaj(){
 
-html2canvas(document.querySelector("#dokiman"), {
 
-scale: 2,
-useCORS: true,
-allowTaint: false
-
-}).then(canvas => {
+let dokiman=document.querySelector("#dokiman");
 
 
-let lyen = document.createElement("a");
+html2canvas(dokiman,{
 
-lyen.download = "Dokiman-SIAVAC.png";
+scale:3,
 
-lyen.href = canvas.toDataURL("image/png");
+useCORS:true,
+
+allowTaint:false
+
+
+}).then(canvas=>{
+
+
+let lyen=document.createElement("a");
+
+
+lyen.download="SIAVAC-Dokiman-Legal-8.5x14.png";
+
+
+lyen.href=canvas.toDataURL("image/png");
+
 
 lyen.click();
 
 
 });
+
 
 }
 
