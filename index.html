@@ -6,6 +6,8 @@
 
 <title>Dokiman Ofisyèl SIAVAC</title>
 
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 <style>
 
 *{
@@ -109,7 +111,7 @@ width:90%;
 
 max-width:350px;
 
-margin:20px auto;
+margin:15px auto;
 
 padding:14px;
 
@@ -198,7 +200,7 @@ max-width:none;
 <body>
 
 
-<div class="page">
+<div class="page" id="dokiman">
 
 
 <div class="logo">
@@ -254,6 +256,36 @@ Sèvis Entèlijans Anti-Vòl ak Anti-Krim
 
 </button>
 
+
+<button onclick="telechajeImaj()">
+
+📷 Telechaje kòm imaj PNG
+
+</button>
+
+
+
+<script>
+
+function telechajeImaj(){
+
+html2canvas(document.querySelector("#dokiman"), {
+scale: 2
+}).then(canvas => {
+
+let lyen = document.createElement("a");
+
+lyen.download = "Dokiman-SIAVAC.png";
+
+lyen.href = canvas.toDataURL("image/png");
+
+lyen.click();
+
+});
+
+}
+
+</script>
 
 
 </body>
