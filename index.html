@@ -205,7 +205,9 @@ max-width:none;
 
 <div class="logo">
 
-<img src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg" alt="Logo Ofisyèl SIAVAC">
+<img crossorigin="anonymous" 
+src="https://i.ibb.co/zTz2rrh8/sketch-1782265870898.jpg" 
+alt="Logo Ofisyèl SIAVAC">
 
 </div>
 
@@ -270,8 +272,13 @@ Sèvis Entèlijans Anti-Vòl ak Anti-Krim
 function telechajeImaj(){
 
 html2canvas(document.querySelector("#dokiman"), {
-scale: 2
+
+scale: 2,
+useCORS: true,
+allowTaint: false
+
 }).then(canvas => {
+
 
 let lyen = document.createElement("a");
 
@@ -280,6 +287,7 @@ lyen.download = "Dokiman-SIAVAC.png";
 lyen.href = canvas.toDataURL("image/png");
 
 lyen.click();
+
 
 });
 
